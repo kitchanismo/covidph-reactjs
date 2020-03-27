@@ -26,13 +26,25 @@ const useStyles = makeStyles(theme => ({
 const Cards = ({summary}) => {
 	const classes = useStyles()
 
-	const card = ({count, title, color}) => (
+	const getPercentage = (part, whole) => {
+		const x = part * 100
+		return Math.round(x / whole)
+	}
+
+	const card = ({count, title, color, hasPercentage}) => (
 		<Grid item xs={6}>
 			<Paper className={classes.paper}>
 				<Grid container direction='row' justify='center'>
 					<Grid item xs={6}>
-						<Typography variant='h6' style={{color}}>
-							{count}
+						<Typography
+							variant={hasPercentage ? 'subtitle2' : 'h6'}
+							style={{color}}
+						>
+							{`${count}${
+								hasPercentage
+									? '/' + getPercentage(count, summary.cases) + '%'
+									: ''
+							}`}
 						</Typography>
 						<Typography variant='caption'>{title}</Typography>
 					</Grid>
@@ -89,9 +101,20 @@ const Cards = ({summary}) => {
 				color: classes.paper.color
 			})}
 			{card({count: summary.active, title: 'Active', color: '#3f51b5'})}
-			{card({count: summary.deaths, title: 'Deaths', color: 'rgb(220, 0, 78)'})}
+			{card({
+				count: summary.deaths,
+				title: 'Deaths',
+				hasPercentage: true,
+				color: 'rgb(220, 0, 78)'
+			})}
+
 			{/* {card({count: summary.critical, title: 'Criticals', color: 'rgb(255, 87, 34)'})} */}
-			{card({count: summary.recovered, title: 'Recovered', color: '#4caf50'})}
+			{card({
+				count: summary.recovered,
+				title: 'Recovered',
+				hasPercentage: true,
+				color: '#4caf50'
+			})}
 		</React.Fragment>
 	)
 }

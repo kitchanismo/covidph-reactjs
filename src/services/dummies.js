@@ -1,11 +1,11 @@
 export function getSummary() {
 	return Promise.resolve({
 		active: 34,
-		cases: 555,
+		cases: 500,
 		casesPerOneMillion: 6,
 		critical: 6,
-		deaths: 4,
-		recovered: 66,
+		deaths: 450,
+		recovered: 10,
 		todayCases: 0,
 		todayDeaths: 4
 	})
