@@ -37,7 +37,7 @@ const Cards = ({summary}) => {
 						<Typography variant='caption'>{title}</Typography>
 					</Grid>
 					<Grid container item xs={6} justify='flex-end' alignItems='center'>
-						<UserIcon style={{fontSize: 50, color}}></UserIcon>
+						<UserIcon style={{fontSize: 50, color, paddingLeft: 10}}></UserIcon>
 					</Grid>
 				</Grid>
 			</Paper>

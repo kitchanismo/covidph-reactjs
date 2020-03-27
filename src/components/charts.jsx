@@ -30,12 +30,12 @@ const Charts = ({items}) => {
 		])
 		setAges([
 			{
-				color: '#4caf50',
+				color: 'rgba(0, 0, 0, 0.54)',
 				title: 'Below 30',
 				value: below
 			},
 			{
-				color: deepPurple[500],
+				color: '#3f51b5',
 				title: '31-60',
 				value: mid
 			},
@@ -50,9 +50,9 @@ const Charts = ({items}) => {
 	return (
 		<React.Fragment>
 			<Divider style={{marginTop: 30, marginBottom: 10}}></Divider>
-			<Chart title='Affected Cases by Gender' items={gender}></Chart>
+			<Chart key={1} title='Affected Cases by Gender' items={gender}></Chart>
 			<Divider style={{marginTop: 5, marginBottom: 10}}></Divider>
-			<Chart title='Affected Cases by Age' items={ages}></Chart>
+			<Chart key={2} title='Affected Cases by Age' items={ages}></Chart>
 		</React.Fragment>
 	)
 }
