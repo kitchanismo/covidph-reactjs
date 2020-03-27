@@ -15,6 +15,7 @@ import useCovid from './hooks/useCovid'
 import {countData} from './services/utils'
 import Charts from './components/charts'
 import Footer from './components/footer'
+import Error from './components/error'
 
 const App = props => {
 	const classes = useStyles()
@@ -28,8 +29,9 @@ const App = props => {
 	return (
 		<React.Fragment>
 			<Nav isLoading={isLoading}></Nav>
+			{error && <Error onRefresh={reload}></Error>}
 			<Banner></Banner>
-			{!isLoading && (
+			{!isLoading && !error && (
 				<React.Fragment>
 					<Container maxWidth='sm' className={classes.container}>
 						<Grid

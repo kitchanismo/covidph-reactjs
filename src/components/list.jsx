@@ -46,7 +46,14 @@ export default function ListView({data, title}) {
 	const [isHide, setIsHide] = useState(true)
 
 	const displayItems = () =>
-		!isHide ? itemsReducer(data) : itemsReducer(data).slice(0, 4)
+		!isHide ? itemsReducer(data) : itemsReducer(data).slice(0, 5)
+
+	const replaceForValidation = () =>
+		displayItems().map(item => {
+			if (item.name === '?') return {...item, name: 'For Validation'}
+
+			return item
+		})
 
 	return (
 		<div className={classes.list}>
@@ -60,7 +67,7 @@ export default function ListView({data, title}) {
 				component='nav'
 				aria-label='main mailbox folders'
 			>
-				{displayItems().map((item, i) => {
+				{replaceForValidation().map((item, i) => {
 					return (
 						<ListItem button key={i}>
 							<ListItemIcon>

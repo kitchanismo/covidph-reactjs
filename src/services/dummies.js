@@ -19,7 +19,7 @@ export function getDetails() {
 					cases: [
 						{
 							case: 1,
-							resident_of: 'sample',
+							resident_of: '?',
 							currently_at: 'abc',
 							sex: 'M',
 							age: 20
