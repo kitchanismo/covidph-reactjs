@@ -17,9 +17,8 @@ const useStyles = makeStyles(theme => ({
 		width: '100%'
 	},
 	virus: {
-		paddingTop: 10,
-		paddingLeft: 90,
-		marginBottom: -40,
+		marginBottom: -110,
+		marginTop: 10,
 		height: 230
 	}
 }))
