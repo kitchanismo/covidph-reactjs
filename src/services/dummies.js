@@ -6,8 +6,8 @@ export function getSummary() {
 		critical: 6,
 		deaths: 4,
 		recovered: 66,
-		todayCases: 7,
-		todayDeaths: 8
+		todayCases: 0,
+		todayDeaths: 4
 	})
 }
 

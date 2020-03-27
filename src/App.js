@@ -9,13 +9,11 @@ import './App.css'
 import 'typeface-roboto'
 import List from './components/list'
 import Banner from './components/banner'
-import Chart from './components/chart'
 
 import useCovid from './hooks/useCovid'
 import {countData} from './services/utils'
 import Charts from './components/charts'
 import Footer from './components/footer'
-import Error from './components/error'
 
 const App = props => {
 	const classes = useStyles()
@@ -28,8 +26,13 @@ const App = props => {
 
 	return (
 		<React.Fragment>
-			<Nav isLoading={isLoading}></Nav>
-			{error && <Error onRefresh={reload}></Error>}
+			<Nav
+				onReload={reload}
+				error={error}
+				isLoading={isLoading}
+				summary={summary}
+			></Nav>
+
 			<Banner></Banner>
 			{!isLoading && !error && (
 				<React.Fragment>

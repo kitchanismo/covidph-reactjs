@@ -82,7 +82,7 @@ const Cards = ({summary}) => {
 
 	return (
 		<React.Fragment>
-			{newAdded}
+			{/* {newAdded} */}
 			{card({
 				count: summary.cases,
 				title: 'Infected',

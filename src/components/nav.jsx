@@ -15,6 +15,8 @@ import {
 } from '@material-ui/core'
 
 import PropTypes from 'prop-types'
+import Info from './info'
+import Error from './error'
 
 function HideOnScroll(props) {
 	const {children, window} = props
@@ -33,13 +35,16 @@ HideOnScroll.propTypes = {
 	window: PropTypes.func
 }
 
-const Nav = props => {
+const Nav = ({summary, error, onReload, ...props}) => {
 	const classes = useStyles()
+	const noNewCases = summary.todayCases === 0 && summary.todayDeaths === 0
 	return (
 		<React.Fragment>
 			<CssBaseline />
 			<HideOnScroll {...props}>
 				<AppBar>
+					{!noNewCases && <Info summary={summary}></Info>}
+					{error && <Error onRefresh={onReload}></Error>}
 					<Grid item container justify='center'>
 						<Toolbar>
 							<img
