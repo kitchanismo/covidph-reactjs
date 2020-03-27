@@ -18,7 +18,7 @@ const Chart = ({items, title}) => {
 				{title}
 			</Typography>
 			<PieChart
-				animate={true}
+				animate={false}
 				animationDuration={500}
 				animationEasing='ease-out'
 				cx={50}
