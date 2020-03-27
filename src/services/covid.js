@@ -11,4 +11,3 @@ export function getDetails() {
 		.then(res => res.json())
 		.then(res => res)
 }
-git
