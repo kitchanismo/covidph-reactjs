@@ -1,58 +1,22 @@
 import React from 'react'
-import Container from '@material-ui/core/Container'
-import Grid from '@material-ui/core/Grid'
 
-import Nav from './components/nav'
-import Cards from './components/cards'
-import useStyles from './styles'
+import CovidProvider from './providers/covid'
+
+import Nav from './components/common/nav'
+import Banner from './components/common/banner'
+import Home from './components/home'
+
 import './App.css'
 import 'typeface-roboto'
-import List from './components/list'
-import Banner from './components/banner'
-
-import useCovid from './hooks/useCovid'
-import {countData} from './services/utils'
-import Charts from './components/charts'
-import Footer from './components/footer'
 
 const App = props => {
-	const classes = useStyles()
-
-	const {summary, casesList, isLoading, error, reload} = useCovid()
-
-	const objCurrentlyAt = countData(casesList, 'facility')
-
-	const objResidentyOf = countData(casesList, 'resident_of')
-
 	return (
 		<React.Fragment>
-			<Nav
-				onReload={reload}
-				error={error}
-				isLoading={isLoading}
-				summary={summary}
-			></Nav>
-
-			<Banner></Banner>
-			{!isLoading && !error && (
-				<React.Fragment>
-					<Container maxWidth='sm' className={classes.container}>
-						<Grid
-							container
-							item
-							spacing={3}
-							direction='row'
-							justify='space-around'
-						>
-							<Cards summary={summary} />
-						</Grid>
-					</Container>
-					<Charts items={casesList}></Charts>
-					<List data={objCurrentlyAt} title='Health Facilities'></List>
-					<List data={objResidentyOf} title='Affected Areas'></List>
-					<Footer></Footer>
-				</React.Fragment>
-			)}
+			<CovidProvider>
+				<Nav></Nav>
+				<Banner></Banner>
+				<Home></Home>
+			</CovidProvider>
 		</React.Fragment>
 	)
 }

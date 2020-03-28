@@ -1,13 +1,11 @@
-import React, {Component} from 'react'
-import useStyles from '../styles'
-import logo from '../img/logo.svg'
+import React, {Component, useContext} from 'react'
+import useStyles from '../../styles'
+import logo from '../../img/logo.svg'
 import {
 	Toolbar,
 	AppBar,
 	Typography,
 	CssBaseline,
-	Box,
-	Container,
 	Slide,
 	useScrollTrigger,
 	Grid,
@@ -17,6 +15,7 @@ import {
 import PropTypes from 'prop-types'
 import Info from './info'
 import Error from './error'
+import {CovidContext} from '../../providers/context'
 
 function HideOnScroll(props) {
 	const {children, window} = props
@@ -35,8 +34,9 @@ HideOnScroll.propTypes = {
 	window: PropTypes.func
 }
 
-const Nav = ({summary, error, onReload, ...props}) => {
-	const classes = useStyles()
+const Nav = props => {
+	const {summary, error, reload} = useContext(CovidContext)
+
 	const noNewCases = summary.todayCases === 0 && summary.todayDeaths === 0
 	return (
 		<React.Fragment>
@@ -44,7 +44,7 @@ const Nav = ({summary, error, onReload, ...props}) => {
 			<HideOnScroll {...props}>
 				<AppBar>
 					{!noNewCases && <Info summary={summary}></Info>}
-					{error && <Error onRefresh={onReload}></Error>}
+					{error && <Error onRefresh={reload}></Error>}
 					<Grid item container justify='center'>
 						<Toolbar>
 							<img

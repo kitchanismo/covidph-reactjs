@@ -1,8 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import Chart from './chart'
 import Divider from '@material-ui/core/Divider'
-import {deepPurple} from '@material-ui/core/colors'
-const Charts = ({items}) => {
+
+import {CovidContext} from '../providers/context'
+
+const Charts = props => {
+	const {casesList: items} = useContext(CovidContext)
 	const [gender, setGender] = useState([])
 	const [ages, setAges] = useState([])
 

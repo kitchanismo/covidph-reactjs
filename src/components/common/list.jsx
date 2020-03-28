@@ -13,7 +13,7 @@ import {
 } from '@material-ui/core'
 
 import {deepPurple} from '@material-ui/core/colors'
-import {itemsReducer} from '../services/utils'
+import {itemsReducer} from '../../services/utils'
 
 const useStyles = makeStyles(theme => ({
 	list: {
@@ -41,19 +41,12 @@ const useStyles = makeStyles(theme => ({
 	btn: {marginRight: theme.spacing(1)}
 }))
 
-export default function ListView({data, title}) {
+export default function ListView({items, title}) {
 	const classes = useStyles()
+
 	const [isHide, setIsHide] = useState(true)
 
-	const displayItems = () =>
-		!isHide ? itemsReducer(data) : itemsReducer(data).slice(0, 5)
-
-	const replaceForValidation = () =>
-		displayItems().map(item => {
-			if (item.name === '?') return {...item, name: 'For Validation'}
-
-			return item
-		})
+	const displayItems = !isHide ? items : items.slice(0, 5)
 
 	return (
 		<div className={classes.list}>
@@ -67,7 +60,7 @@ export default function ListView({data, title}) {
 				component='nav'
 				aria-label='main mailbox folders'
 			>
-				{replaceForValidation().map((item, i) => {
+				{displayItems.map((item, i) => {
 					return (
 						<ListItem button key={i}>
 							<ListItemIcon>

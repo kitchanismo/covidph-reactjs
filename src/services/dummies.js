@@ -20,77 +20,77 @@ export function getDetails() {
 						{
 							case: 1,
 							resident_of: '?',
-							currently_at: 'abc',
+							facility: 'abc',
 							sex: 'M',
 							age: 20
 						},
 						{
 							case: 2,
 							resident_of: 'sample',
-							currently_at: 'ghhhfff',
+							facility: 'ghhhfff',
 							sex: 'M',
 							age: 30
 						},
 						{
 							case: 3,
 							resident_of: 'samprle',
-							currently_at: 'abc',
+							facility: 'abc',
 							sex: 'M',
 							age: 40
 						},
 						{
 							case: 4,
 							resident_of: 'samprle',
-							currently_at: 'abc',
+							facility: 'abc',
 							sex: 'M',
 							age: 50
 						},
 						{
 							case: 5,
 							resident_of: 'sample',
-							currently_at: 'dffdd',
+							facility: 'dffdd',
 							sex: 'F',
 							age: 61
 						},
 						{
 							case: 6,
 							resident_of: 'sampdfdfle',
-							currently_at: 'dffdd',
+							facility: 'dffdd',
 							sex: 'F',
 							age: 61
 						},
 						{
 							case: 7,
 							resident_of: 'samdfdple',
-							currently_at: 'ddfdfd',
+							facility: 'ddfdfd',
 							sex: 'F',
 							age: 61
 						},
 						{
 							case: 8,
 							resident_of: 'samgfgple',
-							currently_at: 'ddggd',
+							facility: 'ddggd',
 							sex: 'F',
 							age: 61
 						},
 						{
 							case: 9,
 							resident_of: 'samfgple',
-							currently_at: 'dgdd',
+							facility: 'dgdd',
 							sex: 'F',
 							age: 61
 						},
 						{
 							case: 10,
 							resident_of: 'samfffgple',
-							currently_at: 'dgffdd',
+							facility: 'dgffdd',
 							sex: 'F',
 							age: 61
 						},
 						{
 							case: 11,
 							resident_of: 'samfgphhle',
-							currently_at: 'dgnndd',
+							facility: 'dgnndd',
 							sex: 'F',
 							age: 61
 						}

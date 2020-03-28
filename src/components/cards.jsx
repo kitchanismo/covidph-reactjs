@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import UserIcon from '@material-ui/icons/AccountCircle'
@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid'
 
 import {makeStyles} from '@material-ui/core/styles'
 import {getPercentage} from '../services/utils'
+import {CovidContext} from '../providers/context'
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -24,7 +25,8 @@ const useStyles = makeStyles(theme => ({
 	}
 }))
 
-const Cards = ({summary}) => {
+const Cards = props => {
+	const {summary} = useContext(CovidContext)
 	const classes = useStyles()
 
 	const card = ({count, title, color, hasPercentage}) => (
