@@ -3,6 +3,7 @@ import Chart from './chart'
 import Divider from '@material-ui/core/Divider'
 
 import {CovidContext} from '../providers/context'
+import {Container} from '@material-ui/core'
 
 const Charts = props => {
 	const {casesList: items} = useContext(CovidContext)

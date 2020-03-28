@@ -18,20 +18,13 @@ const Home = props => {
 		!isLoading &&
 		!error && (
 			<React.Fragment>
-				<Container maxWidth='sm' className={classes.container}>
-					<Grid
-						container
-						item
-						spacing={3}
-						direction='row'
-						justify='space-around'
-					>
-						<Cards />
-					</Grid>
+				<Container maxWidth='md'>
+					<Cards />
+
+					<Charts></Charts>
+					<List items={facilities} title='Health Facilities'></List>
+					<List items={residents} title='Affected Areas'></List>
 				</Container>
-				<Charts></Charts>
-				<List items={facilities} title='Health Facilities'></List>
-				<List items={residents} title='Affected Areas'></List>
 				<Footer></Footer>
 			</React.Fragment>
 		)

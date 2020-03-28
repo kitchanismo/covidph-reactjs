@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid'
 import {makeStyles} from '@material-ui/core/styles'
 import {getPercentage} from '../services/utils'
 import {CovidContext} from '../providers/context'
+import {useMedia} from 'react-use'
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -26,11 +27,12 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Cards = props => {
+	const isWeb = useMedia('(min-width: 600px)')
 	const {summary} = useContext(CovidContext)
 	const classes = useStyles()
 
 	const card = ({count, title, color, hasPercentage}) => (
-		<Grid item xs={6}>
+		<Grid item xs={isWeb ? 3 : 6}>
 			<Paper className={classes.paper}>
 				<Grid container direction='row' justify='center'>
 					<Grid item xs={6}>
@@ -55,7 +57,14 @@ const Cards = props => {
 	)
 
 	return (
-		<React.Fragment>
+		<Grid
+			className={classes.container}
+			container
+			item
+			spacing={3}
+			direction='row'
+			justify='space-around'
+		>
 			{card({
 				count: summary.cases,
 				title: 'Infected',
@@ -74,7 +83,7 @@ const Cards = props => {
 				hasPercentage: true,
 				color: '#4caf50'
 			})}
-		</React.Fragment>
+		</Grid>
 	)
 }
 

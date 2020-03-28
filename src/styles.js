@@ -14,7 +14,8 @@ const useStyles = makeStyles(theme => ({
 	appBar: {},
 
 	container: {
-		marginTop: '20px'
+		marginTop: '20px',
+		padding: 0
 	}
 }))
 

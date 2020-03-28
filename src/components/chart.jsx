@@ -12,7 +12,7 @@ const Chart = ({items, title}) => {
 			justify='center'
 			alignItems='center'
 			direction='column'
-			style={{padding: 40, paddingTop: 20}}
+			style={{padding: 20, paddingTop: 20}}
 		>
 			<Typography color='primary' variant='h6' style={{marginBottom: 20}}>
 				{title}
