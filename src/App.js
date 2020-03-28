@@ -20,7 +20,7 @@ const App = props => {
 
 	const {summary, casesList, isLoading, error, reload} = useCovid()
 
-	const objCurrentlyAt = countData(casesList, 'currently_at')
+	const objCurrentlyAt = countData(casesList, 'facility')
 
 	const objResidentyOf = countData(casesList, 'resident_of')
 

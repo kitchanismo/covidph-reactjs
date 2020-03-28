@@ -16,3 +16,7 @@ export function itemsReducer(data) {
 		})
 		.sort((a, b) => (a.count < b.count ? 1 : -1))
 }
+export function getPercentage(part, whole) {
+	const x = part * 100
+	return Math.round(x / whole)
+}
