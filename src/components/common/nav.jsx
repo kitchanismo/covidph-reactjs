@@ -35,7 +35,7 @@ HideOnScroll.propTypes = {
 }
 
 const Nav = props => {
-	const {summary, error, reload} = useContext(CovidContext)
+	const {summary, error, reload, isLoading} = useContext(CovidContext)
 
 	const noNewCases = summary.todayCases === 0 && summary.todayDeaths === 0
 	return (
@@ -56,7 +56,7 @@ const Nav = props => {
 							<Typography variant='h6'>COVIDPH</Typography>
 						</Toolbar>
 					</Grid>
-					{props.isLoading && <LinearProgress color='secondary' />}
+					{isLoading && <LinearProgress color='secondary' />}
 				</AppBar>
 			</HideOnScroll>
 			<Toolbar />

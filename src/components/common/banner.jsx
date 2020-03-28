@@ -20,15 +20,21 @@ const useStyles = makeStyles(theme => ({
 		marginBottom: -120,
 		marginTop: 10,
 		height: 230
+	},
+	container: {
+		backgroundColor: 'rgb(232, 244, 253)',
+		height: 200
 	}
 }))
 
 const Banner = () => {
 	const classes = useStyles()
 	return (
-		<Grid item xs={12} container justify='center' alignItems='center'>
-			<img src={virus} className={classes.banner} />
-		</Grid>
+		<div className={classes.container}>
+			<Grid item xs={12} container justify='center' alignItems='center'>
+				<img src={virus} className={classes.banner} />
+			</Grid>
+		</div>
 	)
 }
 
