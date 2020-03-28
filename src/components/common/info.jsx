@@ -18,7 +18,7 @@ const Info = ({summary}) => {
 			severity='info'
 			onClose={() => setIsOpen(o => !o)}
 		>
-			<Grid item xs={12} container justify='center'>
+			<Grid item xs={12} container justify='flex-start'>
 				<AlertTitle color='primary'>New Cases</AlertTitle>
 				<Divider style={{marginTop: 5, marginBottom: 10}}></Divider>
 				<Grid container direction='row' justify='space-around'>
