@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-import {getSummary, getDetails} from '../services/dummies'
+import {getSummary, getDetails} from '../services/covid'
 
 export default function() {
 	const [summary, setSummary] = useState({
