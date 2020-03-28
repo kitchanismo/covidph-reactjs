@@ -10,7 +10,8 @@ import {
 	Button,
 	Avatar,
 	Grid,
-	Container
+	Container,
+	Paper
 } from '@material-ui/core'
 
 import {deepPurple} from '@material-ui/core/colors'
@@ -23,7 +24,8 @@ const useStyles = makeStyles(theme => ({
 		marginTop: 20,
 		marginBottom: 20,
 		marginLeft: 0,
-		marginRight: 0
+		marginRight: 0,
+		borderRadius: 7
 	},
 	title: {
 		marginTop: 10,
@@ -35,8 +37,8 @@ const useStyles = makeStyles(theme => ({
 	count: {
 		width: theme.spacing(4),
 		height: theme.spacing(4),
-		color: theme.palette.getContrastText(deepPurple[500]),
-		backgroundColor: deepPurple[500],
+		color: 'white',
+		backgroundColor: '#3f51b5',
 		fontSize: 12
 	},
 	btn: {marginRight: theme.spacing(1)}
@@ -50,7 +52,7 @@ export default function ListView({items, title}) {
 	const displayItems = !isHide ? items : items.slice(0, 5)
 
 	return (
-		<div className={classes.list}>
+		<Paper className={classes.list}>
 			<Typography color='primary' className={classes.title} variant='h6'>
 				{title}
 			</Typography>
@@ -72,7 +74,7 @@ export default function ListView({items, title}) {
 					)
 				})}
 
-				<Grid item container justify='flex-end'>
+				<Grid item container justify='center'>
 					<Button
 						onClick={() => setIsHide(t => !t)}
 						href='#text-buttons'
@@ -83,6 +85,6 @@ export default function ListView({items, title}) {
 					</Button>
 				</Grid>
 			</List>
-		</div>
+		</Paper>
 	)
 }

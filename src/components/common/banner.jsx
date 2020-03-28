@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	banner: {
 		marginBottom: -120,
-		marginTop: 10,
+		marginTop: 25,
 		height: 230
 	},
 	container: {
