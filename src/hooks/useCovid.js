@@ -5,7 +5,7 @@ import {getSummary, getDetails} from '../services/covid'
 export default function() {
 	const [summary, setSummary] = useState({
 		active: 0,
-		cases: 0,
+		infected: 0,
 		casesPerOneMillion: 0,
 		critical: 0,
 		deaths: 0,
@@ -24,13 +24,15 @@ export default function() {
 
 	const reload = () => setRefresh(r => !r)
 
+	useEffect(() => {}, [])
+
 	useEffect(() => {
 		setError(false)
 		setIsLoading(true)
 
 		Promise.all([getSummary(), getDetails()])
 			.then(([summary, details]) => {
-				setSummary(summary)
+				setSummary({...summary, infected: summary.cases})
 				setCasesList(details.cases)
 				setIsLoading(false)
 				setError(false)
@@ -42,5 +44,11 @@ export default function() {
 			})
 	}, [refresh])
 
-	return {summary, casesList, isLoading, error, reload}
+	return {
+		summary,
+		casesList,
+		isLoading,
+		error,
+		reload
+	}
 }

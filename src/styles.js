@@ -9,7 +9,8 @@ const useStyles = makeStyles(theme => ({
 		paddingLeft: theme.spacing(2),
 		paddingRight: theme.spacing(2),
 		textAlign: 'left',
-		color: theme.palette.text.secondary
+		color: theme.palette.text.secondary,
+		backgroundColor: 'white'
 	},
 	appBar: {},
 

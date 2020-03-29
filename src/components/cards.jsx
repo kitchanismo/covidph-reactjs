@@ -6,7 +6,6 @@ import Grid from '@material-ui/core/Grid'
 
 import {makeStyles} from '@material-ui/core/styles'
 import {getPercentage} from '../services/utils'
-import {CovidContext} from '../providers/context'
 import {useMedia} from 'react-use'
 
 const useStyles = makeStyles(theme => ({
@@ -22,13 +21,13 @@ const useStyles = makeStyles(theme => ({
 	},
 
 	container: {
-		marginTop: '20px'
+		marginTop: '15px'
 	}
 }))
 
-const Cards = props => {
+const Cards = ({data}) => {
 	const isWeb = useMedia('(min-width: 600px)')
-	const {summary} = useContext(CovidContext)
+
 	const classes = useStyles()
 
 	const card = ({count, title, color, hasPercentage}) => (
@@ -42,7 +41,7 @@ const Cards = props => {
 						>
 							{`${count}${
 								hasPercentage
-									? '/' + getPercentage(count, summary.cases) + '%'
+									? '/' + getPercentage(count, data.infected) + '%'
 									: ''
 							}`}
 						</Typography>
@@ -66,19 +65,19 @@ const Cards = props => {
 			justify='space-around'
 		>
 			{card({
-				count: summary.cases,
+				count: data.infected,
 				title: 'Infected',
 				color: classes.paper.color
 			})}
-			{card({count: summary.active, title: 'Active', color: '#3f51b5'})}
+			{card({count: data.active, title: 'Active', color: '#3f51b5'})}
 			{card({
-				count: summary.deaths,
+				count: data.deaths,
 				title: 'Deaths',
 				hasPercentage: true,
 				color: 'rgb(220, 0, 78)'
 			})}
 			{card({
-				count: summary.recovered,
+				count: data.recovered,
 				title: 'Recovered',
 				hasPercentage: true,
 				color: '#4caf50'

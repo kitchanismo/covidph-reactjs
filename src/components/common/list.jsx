@@ -14,13 +14,9 @@ import {
 	Paper
 } from '@material-ui/core'
 
-import {deepPurple} from '@material-ui/core/colors'
-import {itemsReducer} from '../../services/utils'
-
 const useStyles = makeStyles(theme => ({
 	list: {
 		width: '100%',
-
 		marginTop: 20,
 		marginBottom: 20,
 		marginLeft: 0,
@@ -44,7 +40,12 @@ const useStyles = makeStyles(theme => ({
 	btn: {marginRight: theme.spacing(1)}
 }))
 
-export default function ListView({items, title}) {
+export default function ListView({
+	items,
+	title,
+	isClickable = false,
+	...props
+}) {
 	const classes = useStyles()
 
 	const [isHide, setIsHide] = useState(true)
@@ -65,7 +66,16 @@ export default function ListView({items, title}) {
 			>
 				{displayItems.map((item, i) => {
 					return (
-						<ListItem button key={i}>
+						<ListItem
+							button
+							key={i}
+							onClick={e => {
+								if (isClickable)
+									return props.history.replace(
+										`/${item.name.toLowerCase().replace(/ /g, '-')}`
+									)
+							}}
+						>
 							<ListItemIcon>
 								<Avatar className={classes.count}>{item.count}</Avatar>
 							</ListItemIcon>

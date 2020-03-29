@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {CovidContext} from './context'
 import useCovid from '../hooks/useCovid'
 import {countData, itemsReducer} from '../services/utils'

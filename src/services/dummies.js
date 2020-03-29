@@ -21,34 +21,39 @@ export function getDetails() {
 							case: 1,
 							resident_of: '?',
 							facility: 'abc',
+							status: 'Recovered',
 							sex: 'M',
 							age: 20
 						},
 						{
 							case: 2,
-							resident_of: 'sample',
+							resident_of: 'sample b b',
 							facility: 'ghhhfff',
+							status: 'Admitted',
 							sex: 'M',
 							age: 30
 						},
 						{
 							case: 3,
-							resident_of: 'samprle',
+							resident_of: 'sample b b',
 							facility: 'abc',
+							status: 'Dead',
 							sex: 'M',
 							age: 40
 						},
 						{
 							case: 4,
-							resident_of: 'samprle',
+							resident_of: 'sample b b',
 							facility: 'abc',
+							status: 'Recovered',
 							sex: 'M',
 							age: 50
 						},
 						{
 							case: 5,
-							resident_of: 'sample',
+							resident_of: 'sample b b',
 							facility: 'dffdd',
+							status: 'Dead',
 							sex: 'F',
 							age: 61
 						},
@@ -56,6 +61,7 @@ export function getDetails() {
 							case: 6,
 							resident_of: 'sampdfdfle',
 							facility: 'dffdd',
+							status: 'Admitted',
 							sex: 'F',
 							age: 61
 						},
@@ -63,6 +69,7 @@ export function getDetails() {
 							case: 7,
 							resident_of: 'samdfdple',
 							facility: 'ddfdfd',
+							status: 'Admitted',
 							sex: 'F',
 							age: 61
 						},
@@ -70,6 +77,7 @@ export function getDetails() {
 							case: 8,
 							resident_of: 'samgfgple',
 							facility: 'ddggd',
+							status: 'Admitted',
 							sex: 'F',
 							age: 61
 						},
@@ -77,6 +85,7 @@ export function getDetails() {
 							case: 9,
 							resident_of: 'samfgple',
 							facility: 'dgdd',
+							status: 'Admitted',
 							sex: 'F',
 							age: 61
 						},
@@ -84,6 +93,7 @@ export function getDetails() {
 							case: 10,
 							resident_of: 'samfffgple',
 							facility: 'dgffdd',
+							status: 'Admitted',
 							sex: 'F',
 							age: 61
 						},
@@ -91,6 +101,7 @@ export function getDetails() {
 							case: 11,
 							resident_of: 'samfgphhle',
 							facility: 'dgnndd',
+							status: 'Admitted',
 							sex: 'F',
 							age: 61
 						}

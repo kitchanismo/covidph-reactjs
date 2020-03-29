@@ -1,5 +1,5 @@
 import React, {Component, useContext} from 'react'
-import useStyles from '../../styles'
+import {Link} from 'react-router-dom'
 import logo from '../../img/logo.svg'
 import {
 	Toolbar,
@@ -45,17 +45,24 @@ const Nav = props => {
 				<AppBar>
 					{!noNewCases && <Info summary={summary}></Info>}
 					{error && <Error onRefresh={reload}></Error>}
+
 					<Grid item container justify='center'>
-						<Toolbar>
-							<img
-								width='25'
-								height='25'
-								src={logo}
-								style={{paddingRight: 5}}
-							/>
-							<Typography variant='h6'>COVIDPH</Typography>
-						</Toolbar>
+						<Link
+							style={{cursor: 'hand', textDecoration: 'none', color: 'white'}}
+							to='/'
+						>
+							<Toolbar>
+								<img
+									width='25'
+									height='25'
+									src={logo}
+									style={{paddingRight: 5}}
+								/>
+								<Typography variant='h6'>COVIDPH</Typography>
+							</Toolbar>
+						</Link>
 					</Grid>
+
 					{isLoading && <LinearProgress color='secondary' />}
 				</AppBar>
 			</HideOnScroll>

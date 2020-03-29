@@ -1,10 +1,11 @@
 import React from 'react'
 
 import CovidProvider from './providers/covid'
+import Routes from './routes'
 
 import Nav from './components/common/nav'
 import Banner from './components/common/banner'
-import Home from './components/home'
+import Footer from './components/common/footer'
 
 import './App.css'
 import 'typeface-roboto'
@@ -13,9 +14,10 @@ const App = props => {
 	return (
 		<React.Fragment>
 			<CovidProvider>
-				<Nav></Nav>
+				<Nav {...props}></Nav>
 				<Banner></Banner>
-				<Home></Home>
+				<Routes></Routes>
+				<Footer></Footer>
 			</CovidProvider>
 		</React.Fragment>
 	)
