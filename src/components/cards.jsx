@@ -32,7 +32,10 @@ const Cards = ({data}) => {
 
 	const card = ({count, title, color, hasPercentage}) => (
 		<Grid item xs={isWeb ? 3 : 6}>
-			<Paper className={classes.paper}>
+			<Paper
+				style={{borderLeft: `5px solid ${color}`}}
+				className={classes.paper}
+			>
 				<Grid container direction='row' justify='center'>
 					<Grid item xs={6}>
 						<Typography variant={hasPercentage ? 'subtitle1' : 'h6'}>
@@ -66,7 +69,7 @@ const Cards = ({data}) => {
 			{card({
 				count: data.infected,
 				title: 'Infected',
-				color: classes.paper.color
+				color: 'rgba(0, 0, 0, 0.54)'
 			})}
 			{card({count: data.active, title: 'Active', color: '#3f51b5'})}
 			{card({
