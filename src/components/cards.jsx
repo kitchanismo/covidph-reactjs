@@ -35,17 +35,16 @@ const Cards = ({data}) => {
 			<Paper className={classes.paper}>
 				<Grid container direction='row' justify='center'>
 					<Grid item xs={6}>
-						<Typography
-							variant={hasPercentage ? 'subtitle1' : 'h6'}
-							style={{color}}
-						>
+						<Typography variant={hasPercentage ? 'subtitle1' : 'h6'}>
 							{`${count}${
 								hasPercentage
 									? '/' + getPercentage(count, data.infected) + '%'
 									: ''
 							}`}
 						</Typography>
-						<Typography variant='caption'>{title}</Typography>
+						<Typography style={{color}} variant='caption'>
+							{title}
+						</Typography>
 					</Grid>
 					<Grid container item xs={6} justify='flex-end' alignItems='center'>
 						<UserIcon style={{fontSize: 50, color, paddingLeft: 10}}></UserIcon>

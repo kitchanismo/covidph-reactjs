@@ -3,7 +3,6 @@ import {Container, Grid, Paper, Typography} from '@material-ui/core'
 import {CovidContext} from '../providers/context'
 
 import Charts from './charts'
-import Footer from './common/footer'
 import Cards from './cards'
 
 import useStyles from '../styles'
