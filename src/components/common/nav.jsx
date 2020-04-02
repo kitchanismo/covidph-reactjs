@@ -52,13 +52,16 @@ const Nav = props => {
 							to='/'
 						>
 							<Toolbar>
-								<img
-									width='25'
-									height='25'
-									src={logo}
-									style={{paddingRight: 5}}
-								/>
-								<Typography variant='h6'>COVIDPH</Typography>
+								<Typography variant='h6'>
+									C
+									<img
+										style={{marginBottom: -5, marginLeft: 1, marginRight: 1}}
+										width='25'
+										height='25'
+										src={logo}
+									/>
+									VIDPH
+								</Typography>
 							</Toolbar>
 						</Link>
 					</Grid>
