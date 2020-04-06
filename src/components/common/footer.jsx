@@ -8,7 +8,7 @@ const Footer = () => {
 		!isLoading &&
 		!error && (
 			<Grid
-				style={{width: '100%'}}
+				style={{width: '100%', marginTop: -30}}
 				xs={12}
 				justify='center'
 				alignContent='center'
