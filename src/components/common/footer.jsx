@@ -3,9 +3,10 @@ import {Grid, Typography} from '@material-ui/core'
 import {CovidContext} from '../../providers/context'
 import footerWavy from '../../img/footerWavy.svg'
 const Footer = () => {
-	const {isLoading} = useContext(CovidContext)
+	const {isLoading, error} = useContext(CovidContext)
 	return (
-		!isLoading && (
+		!isLoading &&
+		!error && (
 			<Grid
 				style={{width: '100%'}}
 				xs={12}
